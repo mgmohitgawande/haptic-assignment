@@ -1,0 +1,2 @@
+run command:
+node canStringBeFormedUsingGivenListOfStrings.js
