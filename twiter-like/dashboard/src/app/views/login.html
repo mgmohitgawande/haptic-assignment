@@ -1,0 +1,18 @@
+<div class="logo"></div>
+<div class="login-block" ng-show="loginVisible">
+    <h1>Login</h1>
+    <input type="text" value="" placeholder="Username" ng-model="loginData.username" />
+    <input type="password" value="" placeholder="Password" ng-model="loginData.password" />
+    <button ng-click="login()">Submit</button>
+    <button ng-click="showLogin(false)">Or Signup</button>
+</div>
+
+<div class="login-block" ng-show="!loginVisible">
+    <h1>Signup</h1>
+    <input type="text" value="" placeholder="Username" ng-model="signupData.username" />
+    <input type="text" value="" placeholder="Email" ng-model="signupData.email" />
+    <input type="text" value="" placeholder="Phone Number" ng-model="signupData.phonenumber" />
+    <input type="password" value="" placeholder="Password" ng-model="signupData.password" />
+    <button ng-click="signup()">Submit</button>
+    <button ng-click="showLogin(true)">Or Login</button>
+</div>

@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS `Users` (
     `name` TEXT NOT NULL,
     `email_id`  TEXT DEFAULT NULL UNIQUE,
     `phone_number` VARCHAR(20) DEFAULT NULL,
+    `password` : VARCHAR(30) NOT NULL,
     `update_time` DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
     `create_time` DATETIME DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY ( `_id` )

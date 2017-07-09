@@ -1,0 +1,25 @@
+{
+  "name": "twiter-like",
+  "version": "1.0.0",
+  "description": "haptic assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohit Gawande",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.1",
+    "express-session": "^1.15.0",
+    "googleapis": "^16.1.0",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "mongodb": "^2.2.22",
+    "mongoose": "^4.8.1",
+    "mysql": "^2.13.0",
+    "paypal-rest-sdk": "^1.7.1",
+    "request": "^2.79.0"
+  }
+}

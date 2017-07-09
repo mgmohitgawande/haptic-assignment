@@ -1,0 +1,28 @@
+<div class="login-block">
+    <h1>HOME</h1>
+    <textarea id="textarea" rows="8" cols="30" maxlength="140" ng-model="tweetText"></textarea>
+    Character Remaining : {{140 - tweetText.length}}
+    <button ng-click="postTweet(false)">TWEET</button>
+</div>
+
+<div class="login-block">
+    <div class="container" ng-repeat="tweet in tweets">
+        <div class="row">
+            <!-- Card Projects -->
+            <div class="col-md-6 col-md-offset-3">
+                <div class="card">
+                    <div class="card-action">
+                        <a href="#" target="new_blank">{{tweet.tweeterUser}}</a>
+                    </div>
+                    <div class="card-content">
+                        <p>{{tweet.tweet}}</p>
+                    </div>
+
+                    <div class="card-image">
+                        <span class="card-title">Material Cards</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
