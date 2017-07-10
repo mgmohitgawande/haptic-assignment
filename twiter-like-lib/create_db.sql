@@ -5,12 +5,14 @@ USE `haptic`;
 CREATE TABLE IF NOT EXISTS `Users` (
     `_id` INT NOT NULL AUTO_INCREMENT,
     `name` TEXT NOT NULL,
-    `email_id`  TEXT DEFAULT NULL UNIQUE,
     `phone_number` VARCHAR(20) DEFAULT NULL,
-    `password` : VARCHAR(30) NOT NULL,
+    `password`  VARCHAR(30) NOT NULL,
+    `email_id`  VARCHAR(30) DEFAULT NULL,
     `update_time` DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
     `create_time` DATETIME DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY ( `_id` )
+    PRIMARY KEY ( `_id` ),
+    UNIQUE KEY `ix_phone` (`phone_number`),
+    UNIQUE KEY `ix_email` (`email_id`)
 );
 
 CREATE TABLE IF NOT EXISTS `Tweets` 
@@ -49,17 +51,7 @@ CREATE TABLE IF NOT EXISTS `Hashtag_Tweet_relationship`
     `create_time` DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
-DELIMITER //
-CREATE DEFINER=`root`@`%` PROCEDURE `create_tweet`(
-    IN user_id INT
-    , IN 
-)
-BEGIN
-    SELECT user_id;
-    END//
-DELIMITER ;
-
-use haptic;
+-- use haptic;
 DROP PROCEDURE IF EXISTS create_user;
 DELIMITER //
 
@@ -68,7 +60,7 @@ DELIMITER //
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `create_user`(
     IN `user_name` TEXT
-    , IN `email_id` VARCHAR(100)
+    , IN `email_id` TEXT
     , IN `phone_number` VARCHAR (20)
 )
 BEGIN
@@ -100,4 +92,4 @@ BEGIN
         , @userName user_name
         , @emailId email_id
         , @phoneNumber phone_number;
-    END
+    END;
